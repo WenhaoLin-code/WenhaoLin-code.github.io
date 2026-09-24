@@ -12,41 +12,36 @@
 
   <title>Wenhao Lin | Portfolio</title>
 
-
   <style>
 
     :root {
       --rutgers-red: #cc0033;
       --rutgers-dark: #7a0019;
-      --ink: #1f2937;
-      --muted: #5f6b7a;
-      --surface: #ffffff;
-      --soft: #f6f7f9;
+      --text-dark: #1f2937;
+      --text-light: #5f6b7a;
+      --background: #ffffff;
+      --background-light: #f6f7f9;
       --border: #e5e7eb;
       --shadow: 0 12px 30px rgba(17, 24, 39, 0.08);
       --radius: 18px;
     }
-
 
     * {
       box-sizing: border-box;
       scroll-behavior: smooth;
     }
 
-
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      color: var(--ink);
-      background: var(--surface);
+      color: var(--text-dark);
+      background: var(--background);
       line-height: 1.6;
     }
-
 
     a {
       color: inherit;
     }
-
 
     .container {
       width: min(1100px, calc(100% - 40px));
@@ -59,11 +54,10 @@
     header {
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 100;
       background: rgba(255, 255, 255, 0.96);
       border-bottom: 1px solid var(--border);
     }
-
 
     nav {
       min-height: 66px;
@@ -73,19 +67,15 @@
       gap: 24px;
     }
 
-
     .brand {
       font-weight: 800;
-      text-decoration: none;
-      letter-spacing: 0.2px;
       font-size: 1.1rem;
+      text-decoration: none;
     }
-
 
     .brand span {
       color: var(--rutgers-red);
     }
-
 
     .nav-links {
       display: flex;
@@ -93,31 +83,28 @@
       flex-wrap: wrap;
     }
 
-
     .nav-links a {
       text-decoration: none;
-      color: var(--muted);
+      color: var(--text-light);
       font-size: 0.95rem;
       font-weight: 700;
     }
-
 
     .nav-links a:hover {
       color: var(--rutgers-red);
     }
 
 
-
-    /* HERO SECTION */
+    /* HERO */
 
     .hero {
-      padding: 82px 0 66px;
+      padding: 85px 0 70px;
 
       background:
         radial-gradient(
           circle at 85% 20%,
           rgba(204, 0, 51, 0.10),
-          transparent 26%
+          transparent 27%
         ),
         linear-gradient(
           180deg,
@@ -126,14 +113,12 @@
         );
     }
 
-
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.45fr 0.55fr;
-      gap: 54px;
+      grid-template-columns: 1.4fr 0.6fr;
+      gap: 60px;
       align-items: center;
     }
-
 
     .eyebrow {
       color: var(--rutgers-red);
@@ -144,41 +129,37 @@
       margin-bottom: 12px;
     }
 
-
     h1 {
       margin: 0 0 14px;
-      font-size: clamp(2.6rem, 6vw, 4.8rem);
+      font-size: clamp(2.7rem, 6vw, 4.8rem);
       line-height: 1.02;
       letter-spacing: -0.045em;
     }
 
-
     .hero-subtitle {
-      margin: 0 0 12px;
-      color: var(--muted);
-      font-size: 1.2rem;
+      margin: 0 0 14px;
+      color: var(--text-light);
+      font-size: 1.18rem;
       font-weight: 700;
+      max-width: 700px;
     }
-
 
     .hero-copy {
       margin: 0;
       max-width: 720px;
-      color: var(--muted);
+      color: var(--text-light);
       font-size: 1.05rem;
     }
 
 
-    .hero-actions {
+    /* BUTTONS */
+
+    .hero-buttons {
       margin-top: 28px;
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
     }
-
-
-
-    /* BUTTONS */
 
     .button {
       display: inline-block;
@@ -190,24 +171,20 @@
       transition: 0.2s ease;
     }
 
-
-    .button.primary {
+    .button-primary {
       background: var(--rutgers-red);
       color: white;
     }
 
-
-    .button.secondary {
+    .button-secondary {
       background: white;
       color: var(--rutgers-red);
     }
 
-
     .button:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 18px rgba(204, 0, 51, 0.12);
+      box-shadow: 0 8px 18px rgba(204, 0, 51, 0.15);
     }
-
 
 
     /* HEADSHOT */
@@ -218,19 +195,20 @@
       align-items: center;
     }
 
-
     .headshot {
-      width: min(270px, 65vw);
-      height: min(270px, 65vw);
+      width: 260px;
+      height: 320px;
+
       object-fit: cover;
-      object-position: center;
-      border-radius: 50%;
+      object-position: center top;
+
+      border-radius: 22px;
+
       border: 5px solid white;
 
       box-shadow:
-        0 15px 35px rgba(17, 24, 39, 0.16);
+        0 18px 40px rgba(17, 24, 39, 0.18);
     }
-
 
 
     /* GENERAL SECTIONS */
@@ -239,11 +217,9 @@
       padding: 72px 0;
     }
 
-
     section.alt {
-      background: var(--soft);
+      background: var(--background-light);
     }
-
 
     .section-label {
       color: var(--rutgers-red);
@@ -254,20 +230,17 @@
       margin-bottom: 8px;
     }
 
-
     h2 {
       margin: 0 0 14px;
       font-size: clamp(1.8rem, 3vw, 2.5rem);
       letter-spacing: -0.02em;
     }
 
-
     .section-intro {
       margin: 0;
       max-width: 780px;
-      color: var(--muted);
+      color: var(--text-light);
     }
-
 
 
     /* PERSONAL STATEMENT */
@@ -288,10 +261,9 @@
 
       box-shadow: var(--shadow);
 
-      font-size: 1.24rem;
+      font-size: 1.22rem;
       font-weight: 700;
     }
-
 
 
     /* SKILLS */
@@ -307,40 +279,26 @@
       gap: 22px;
     }
 
-
-    .skill-group,
-    .project-card {
+    .skill-card {
       background: white;
-
       border: 1px solid var(--border);
-
       border-radius: var(--radius);
-
       padding: 24px;
-
-      box-shadow:
-        0 8px 22px rgba(17, 24, 39, 0.05);
+      box-shadow: 0 8px 22px rgba(17, 24, 39, 0.05);
     }
 
-
-    .skill-group h3,
-    .project-card h3 {
+    .skill-card h3 {
       margin: 0 0 14px;
       font-size: 1.08rem;
     }
 
-
-    .chips {
+    .skills-list {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
     }
 
-
-    .chip {
-      display: inline-flex;
-      align-items: center;
-
+    .skill {
       padding: 8px 11px;
 
       background: #fff4f6;
@@ -357,7 +315,6 @@
     }
 
 
-
     /* PROJECTS */
 
     .projects-grid {
@@ -371,13 +328,21 @@
       gap: 22px;
     }
 
-
     .project-card {
+      background: white;
+
+      border: 1px solid var(--border);
+
+      border-radius: var(--radius);
+
+      padding: 24px;
+
+      box-shadow:
+        0 8px 22px rgba(17, 24, 39, 0.05);
+
       display: flex;
       flex-direction: column;
-      min-height: 100%;
     }
-
 
     .project-tag {
       align-self: flex-start;
@@ -390,7 +355,7 @@
 
       background: #f3f4f6;
 
-      color: var(--muted);
+      color: var(--text-light);
 
       font-size: 0.78rem;
 
@@ -401,26 +366,28 @@
       letter-spacing: 0.05em;
     }
 
-
-    .project-card p {
-      margin: 0 0 16px;
-      color: var(--muted);
+    .project-card h3 {
+      margin: 0 0 14px;
+      font-size: 1.08rem;
     }
 
+    .project-card p {
+      margin: 0 0 18px;
+      color: var(--text-light);
+    }
 
     .project-tech {
       margin-top: auto;
 
+      color: var(--rutgers-dark);
+
       font-size: 0.88rem;
 
       font-weight: 800;
-
-      color: var(--rutgers-dark);
     }
 
-
     .project-reference {
-      margin-top: 14px;
+      margin-top: 15px;
 
       padding-top: 14px;
 
@@ -428,9 +395,8 @@
 
       font-size: 0.86rem;
 
-      color: var(--muted);
+      color: var(--text-light);
     }
-
 
 
     /* FOOTER */
@@ -441,26 +407,18 @@
       padding: 32px 0;
     }
 
-
     .footer-content {
       display: flex;
-
       justify-content: space-between;
-
       align-items: center;
-
       gap: 18px;
-
       flex-wrap: wrap;
     }
-
 
     .footer-links {
       display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
+      gap: 18px;
     }
-
 
     .footer-links a {
       color: white;
@@ -468,28 +426,30 @@
       font-weight: 700;
     }
 
-
     .footer-links a:hover {
       text-decoration: underline;
     }
-
 
 
     /* TABLET */
 
     @media (max-width: 820px) {
 
-      .hero-grid,
-      .skills-grid,
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
       .projects-grid {
         grid-template-columns: 1fr;
       }
 
-
       .headshot-container {
-        margin: 20px auto 0;
+        margin-top: 20px;
       }
-
 
       .hero {
         padding-top: 58px;
@@ -498,33 +458,27 @@
     }
 
 
-
     /* MOBILE */
 
     @media (max-width: 580px) {
 
       nav {
         align-items: flex-start;
-
-        padding: 14px 0;
-
         flex-direction: column;
+        padding: 14px 0;
       }
-
 
       .nav-links {
         gap: 14px;
       }
 
-
       section {
-        padding: 56px 0;
+        padding: 55px 0;
       }
-
 
       .headshot {
         width: 220px;
-        height: 220px;
+        height: 275px;
       }
 
     }
@@ -532,7 +486,6 @@
   </style>
 
 </head>
-
 
 
 <body>
@@ -544,13 +497,9 @@
 
     <div class="container">
 
-      <nav aria-label="Main navigation">
+      <nav>
 
-
-        <a
-          class="brand"
-          href="#top"
-        >
+        <a class="brand" href="#top">
           Wenhao <span>Lin</span>
         </a>
 
@@ -571,7 +520,6 @@
 
         </div>
 
-
       </nav>
 
     </div>
@@ -580,11 +528,10 @@
 
 
 
-
   <main id="top">
 
 
-    <!-- HERO -->
+    <!-- HERO SECTION -->
 
     <section class="hero">
 
@@ -623,11 +570,11 @@
           </p>
 
 
-          <div class="hero-actions">
+          <div class="hero-buttons">
 
 
             <a
-              class="button primary"
+              class="button button-primary"
               href="#projects"
             >
               View Projects
@@ -635,7 +582,7 @@
 
 
             <a
-              class="button secondary"
+              class="button button-secondary"
               href="https://www.linkedin.com/in/wenhao-lin-a5671"
               target="_blank"
               rel="noopener noreferrer"
@@ -656,7 +603,7 @@
         <div class="headshot-container">
 
           <img
-            src="headshot.jpg"
+            src="https://wenhaolin-code.github.io/headshot.jpg"
             alt="Professional headshot of Wenhao Lin"
             class="headshot"
           >
@@ -667,8 +614,6 @@
       </div>
 
     </section>
-
-
 
 
 
@@ -706,8 +651,6 @@
 
 
 
-
-
     <!-- SKILLS -->
 
     <section
@@ -724,7 +667,7 @@
 
 
         <h2>
-          Skills I bring
+          Skills I Bring
         </h2>
 
 
@@ -743,7 +686,7 @@
 
           <!-- TECHNICAL SKILLS -->
 
-          <div class="skill-group">
+          <div class="skill-card">
 
 
             <h3>
@@ -751,48 +694,23 @@
             </h3>
 
 
-            <div class="chips">
+            <div class="skills-list">
 
+              <span class="skill">Excel</span>
 
-              <span class="chip">
-                Excel
-              </span>
+              <span class="skill">Tableau</span>
 
+              <span class="skill">SQL</span>
 
-              <span class="chip">
-                Tableau
-              </span>
+              <span class="skill">Python</span>
 
+              <span class="skill">Java</span>
 
-              <span class="chip">
-                SQL
-              </span>
+              <span class="skill">Data Visualization</span>
 
+              <span class="skill">KPI Development</span>
 
-              <span class="chip">
-                Python
-              </span>
-
-
-              <span class="chip">
-                Java
-              </span>
-
-
-              <span class="chip">
-                Data Visualization
-              </span>
-
-
-              <span class="chip">
-                KPI Development
-              </span>
-
-
-              <span class="chip">
-                Business Analysis
-              </span>
-
+              <span class="skill">Business Analysis</span>
 
             </div>
 
@@ -801,9 +719,9 @@
 
 
 
-          <!-- PROFESSIONAL SKILLS -->
+          <!-- BUSINESS SKILLS -->
 
-          <div class="skill-group">
+          <div class="skill-card">
 
 
             <h3>
@@ -811,48 +729,23 @@
             </h3>
 
 
-            <div class="chips">
+            <div class="skills-list">
 
+              <span class="skill">Supply Chain Analysis</span>
 
-              <span class="chip">
-                Supply Chain Analysis
-              </span>
+              <span class="skill">Problem Solving</span>
 
+              <span class="skill">Team Collaboration</span>
 
-              <span class="chip">
-                Problem Solving
-              </span>
+              <span class="skill">Active Listening</span>
 
+              <span class="skill">Professional Communication</span>
 
-              <span class="chip">
-                Team Collaboration
-              </span>
+              <span class="skill">Presentation</span>
 
+              <span class="skill">Research</span>
 
-              <span class="chip">
-                Active Listening
-              </span>
-
-
-              <span class="chip">
-                Professional Communication
-              </span>
-
-
-              <span class="chip">
-                Presentation
-              </span>
-
-
-              <span class="chip">
-                Research
-              </span>
-
-
-              <span class="chip">
-                Documentation
-              </span>
-
+              <span class="skill">Documentation</span>
 
             </div>
 
@@ -869,12 +762,9 @@
 
 
 
-
-
     <!-- PROJECTS -->
 
     <section id="projects">
-
 
       <div class="container">
 
@@ -899,9 +789,7 @@
 
 
 
-
         <div class="projects-grid">
-
 
 
           <!-- PROJECT 1 -->
@@ -951,8 +839,6 @@
 
 
 
-
-
           <!-- PROJECT 2 -->
 
           <article class="project-card">
@@ -999,8 +885,6 @@
 
 
           </article>
-
-
 
 
 
@@ -1064,12 +948,9 @@
 
 
 
-
-
   <!-- FOOTER -->
 
   <footer>
-
 
     <div class="container footer-content">
 
@@ -1084,7 +965,6 @@
         · Expected May 2028
 
       </div>
-
 
 
       <div class="footer-links">
@@ -1110,7 +990,6 @@
 
 
     </div>
-
 
   </footer>
 
