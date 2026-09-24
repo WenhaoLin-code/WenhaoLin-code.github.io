@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Wenhao Lin - Rutgers Business School student portfolio" />
+  <title>Wenhao Lin | Portfolio</title>
+
+  <style>
+    :root {
+      --rutgers-red: #cc0033;
+      --rutgers-dark: #7a0019;
+      --ink: #1f2937;
+      --muted: #5f6b7a;
+      --surface: #ffffff;
+      --soft: #f6f7f9;
+      --border: #e5e7eb;
+      --shadow: 0 12px 30px rgba(17, 24, 39, 0.08);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--surface);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(1100px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      min-height: 66px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-weight: 800;
+      text-decoration: none;
+      letter-spacing: 0.2px;
+    }
+
+    .brand span {
+      color: var(--rutgers-red);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: var(--rutgers-red);
+    }
+
+    .hero {
+      padding: 82px 0 66px;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(204, 0, 51, 0.10), transparent 26%),
+        linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.45fr 0.55fr;
+      gap: 54px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--rutgers-red);
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2.6rem, 6vw, 4.8rem);
+      line-height: 1.02;
+      letter-spacing: -0.045em;
+    }
+
+    .hero-subtitle {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .hero-copy {
+      margin: 0;
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .hero-actions {
+      margin-top: 28px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 11px 18px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 800;
+      border: 1px solid var(--rutgers-red);
+      transition: 0.2s ease;
+    }
+
+    .button.primary {
+      background: var(--rutgers-red);
+      color: white;
+    }
+
+    .button.secondary {
+      background: white;
+      color: var(--rutgers-red);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(204, 0, 51, 0.12);
+    }
+
+    .monogram {
+      width: min(250px, 60vw);
+      aspect-ratio: 1;
+      margin-left: auto;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--rutgers-red);
+      color: white;
+      font-size: clamp(4rem, 10vw, 7rem);
+      font-weight: 900;
+      letter-spacing: -0.08em;
+      box-shadow: var(--shadow);
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    section.alt {
+      background: var(--soft);
+    }
+
+    .section-label {
+      color: var(--rutgers-red);
+      font-weight: 800;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      letter-spacing: -0.02em;
+    }
+
+    .section-intro {
+      margin: 0;
+      max-width: 780px;
+      color: var(--muted);
+    }
+
+    .statement-card {
+      margin-top: 28px;
+      padding: 28px;
+      border-left: 5px solid var(--rutgers-red);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      background: white;
+      box-shadow: var(--shadow);
+      font-size: 1.24rem;
+      font-weight: 700;
+    }
+
+    .skills-grid {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .skill-group,
+    .project-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 8px 22px rgba(17, 24, 39, 0.05);
+    }
+
+    .skill-group h3,
+    .project-card h3 {
+      margin: 0 0 14px;
+      font-size: 1.08rem;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 11px;
+      background: #fff4f6;
+      border: 1px solid #ffd6df;
+      color: var(--rutgers-dark);
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .projects-grid {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    .project-tag {
+      align-self: flex-start;
+      margin-bottom: 14px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: #f3f4f6;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .project-card p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      flex: 1;
+    }
+
+    .project-tech {
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: var(--rutgers-dark);
+    }
+
+    .project-note {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    footer {
+      background: #1f2937;
+      color: white;
+      padding: 32px 0;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 820px) {
+      .hero-grid,
+      .skills-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .monogram {
+        margin: 8px auto 0;
+      }
+
+      .hero {
+        padding-top: 58px;
+      }
+    }
+
+    @media (max-width: 580px) {
+      nav {
+        align-items: flex-start;
+        padding: 14px 0;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+
+      section {
+        padding: 56px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <nav aria-label="Main navigation">
+
+        <a class="brand" href="#top">
+          Wenhao <span>Lin</span>
+        </a>
+
+        <div class="nav-links">
+          <a href="#statement">Personal Statement</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+        </div>
+
+      </nav>
+    </div>
+  </header>
+
+
+  <main id="top">
+
+    <!-- INTRODUCTION -->
+
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div>
+
+          <div class="eyebrow">
+            Rutgers Business School
+          </div>
+
+          <h1>Wenhao Lin</h1>
+
+          <p class="hero-subtitle">
+            Supply Chain Management + Business Analytics &amp; Information Technology
+          </p>
+
+          <p class="hero-copy">
+            I am a Rutgers Business School student interested in using data,
+            analytics, and business problem-solving to improve operational
+            and supply chain decisions.
+          </p>
+
+          <div class="hero-actions">
+
+            <a class="button primary" href="#projects">
+              View Projects
+            </a>
+
+            <a
+              class="button secondary"
+              href="https://www.linkedin.com/in/wenhao-lin-a5671"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div
+          class="monogram"
+          aria-label="Wenhao Lin initials"
+        >
+          WL
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- PERSONAL STATEMENT -->
+
+    <section id="statement">
+
+      <div class="container">
+
+        <div class="section-label">
+          01 · Personal Statement
+        </div>
+
+        <h2>Who I am professionally</h2>
+
+        <div class="statement-card">
+
+          Rutgers Business School student double majoring in Supply Chain
+          Management and Business Analytics &amp; Information Technology,
+          combining data analytics and business problem-solving to support
+          smarter operational decisions.
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section id="skills" class="alt">
+
+      <div class="container">
+
+        <div class="section-label">
+          02 · Skills
+        </div>
+
+        <h2>Skills I bring</h2>
+
+        <p class="section-intro">
+          A combination of technical, analytical, and professional skills
+          developed through coursework, internships, and team projects.
+        </p>
+
+
+        <div class="skills-grid">
+
+          <div class="skill-group">
+
+            <h3>Technical &amp; Analytical</h3>
+
+            <div class="chips">
+
+              <span class="chip">Excel</span>
+              <span class="chip">Tableau</span>
+              <span class="chip">SQL</span>
+              <span class="chip">Python</span>
+              <span class="chip">Java</span>
+              <span class="chip">Data Visualization</span>
+              <span class="chip">KPI Development</span>
+              <span class="chip">Business Analysis</span>
+
+            </div>
+
+          </div>
+
+
+          <div class="skill-group">
+
+            <h3>Business &amp; Professional</h3>
+
+            <div class="chips">
+
+              <span class="chip">Supply Chain Analysis</span>
+              <span class="chip">Problem Solving</span>
+              <span class="chip">Team Collaboration</span>
+              <span class="chip">Active Listening</span>
+              <span class="chip">Professional Communication</span>
+              <span class="chip">Presentation</span>
+              <span class="chip">Research</span>
+              <span class="chip">Documentation</span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+      <div class="container">
+
+        <div class="section-label">
+          03 · Projects
+        </div>
+
+        <h2>Selected projects</h2>
+
+        <p class="section-intro">
+
+          Projects that demonstrate how I apply analytics, business thinking,
+          and communication to practical problems.
+
+        </p>
+
+
+        <div class="projects-grid">
+
+
+          <!-- PROJECT 1 -->
+
+          <article class="project-card">
+
+            <div class="project-tag">
+              Data Analytics
+            </div>
+
+            <h3>
+              Customer &amp; People Analytics Dashboard
+            </h3>
+
+            <p>
+
+              Developed and refined Tableau dashboards during my Capgemini
+              China internship, using standardized data sources to turn
+              business requirements into clear KPIs, filters, and
+              visualizations for analysis.
+
+            </p>
+
+            <div class="project-tech">
+              Tableau · SQL · KPI Design · PRD Documentation
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 2 -->
+
+          <article class="project-card">
+
+            <div class="project-tag">
+              Business Research
+            </div>
+
+            <h3>
+              RWA Warehouse &amp; Logistics Analysis
+            </h3>
+
+            <p>
+
+              Evaluated Real-World Asset tokenization for warehouse and
+              logistics operating models by analyzing revenue, cost, and
+              asset components and building traceability frameworks around
+              supporting business data.
+
+            </p>
+
+            <div class="project-tech">
+              Business Analysis · Unit Economics · Research · Data Traceability
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 3 -->
+
+          <article class="project-card">
+
+            <div class="project-tag">
+              Smart Manufacturing
+            </div>
+
+            <h3>
+              Big Data Analytics in Smart Manufacturing
+            </h3>
+
+            <p>
+
+              Contributed to a team case study on how manufacturers use big
+              data analytics, including GE Aerospace predictive maintenance,
+              to identify developing equipment issues and improve operational
+              reliability.
+
+            </p>
+
+            <div class="project-tech">
+              Predictive Analytics · Smart Manufacturing · Research · Presentation
+            </div>
+
+          </article>
+
+        </div>
+
+
+        <p class="project-note">
+
+          Additional project files or live demonstrations can be linked here
+          later if they are published publicly.
+
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container footer-content">
+
+      <div>
+        <strong>Wenhao Lin</strong>
+        · Rutgers Business School
+        · Expected May 2028
+      </div>
+
+
+      <div class="footer-links">
+
+        <a href="mailto:wl646@scarletmail.rutgers.edu">
+          Email
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/wenhao-lin-a5671"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
